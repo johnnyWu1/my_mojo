@@ -3,6 +3,7 @@ our $PRIORITY = 4;
 use List::Util qw(first);
 use JSON;
 use Encode;
+use URI::Escape;
 
 sub getMojoType{
 	return {'Mojo::Webqq'=>'QQ','Mojo::Weixin'=>'WX'}->{ref $_[0]};
@@ -11,6 +12,9 @@ sub retrieve_db {
     my ($client,$db,$file) = @_;
     my $new_db = {};
     my $fd;
+    for(keys $db){
+    	delete $db->{$_};
+    }
     if(open $fd,"<",$file){
     	@linelist=<$fd>;
         $filedb=decode_json( join '',@linelist);
@@ -78,11 +82,11 @@ sub call{
 #        return if $msg->type !~ /^message|group_message|dicsuss_message|sess_message$/;
         my ($config);
         if($msg->type eq 'group_message'){
-        	$config = $base->{$client_type.':'.$msg->type.':'.$msg->group_id};
-        	
+        	$config = $base->{$client_type.':'.$msg->type.':'.$msg->group->gnumber};
+        	print $client_type.':'.$msg->type.':'.$msg->group->gnumber . "\n";
         }elsif($msg->type eq 'discuss_message'){
-        	$config = $base->{$client_type.':'.$msg->type.':'.$msg->discuss_id};
-        	
+        	$config = $base->{$client_type.':'.$msg->type.':'.decode("utf8",$msg->discuss->displayname) };
+        	print $client_type.':'.$msg->type.':'.decode("utf8",$msg->discuss->displayname)  . "\n";
         }else{
         	print $msg->type,'不匹配！',"\n";
         	return;
@@ -91,12 +95,11 @@ sub call{
         return if $config->{active} eq 'off';
         return if $config->{mode} eq 0 and $msg->content !~ /@全体成员/;
         my $reply_context = $msg->sender->nick.": ".$msg->content;
-        
         my @query_string = (
             $config->{target}->{key}       =>  $config->{target}->{value} ,
             "content"    =>  decode("utf8",$reply_context),
         );
-		
+		print "@query_string","\n";
 		my $url = {'QQ'=>$qq_url,'WX'=>$wx_url}->{$config->{target}->{plat}};
 		
 		$url .= $config->{target}->{method};

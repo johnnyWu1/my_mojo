@@ -62,7 +62,7 @@ $client->load("PostQRcode",data=>{
 });
 #KnowledgeBase2
 $client->load("KnowledgeBase2");
-$client->load("ShowQRcode");
+#$client->load("ShowQRcode");
 $client->load("SyncGroup");
 $client->run();
 

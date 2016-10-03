@@ -1,4 +1,4 @@
-{"QQ:group_message:2962166213":{"target":{
+{"QQ:group_message:41995224":{"target":{
 	"plat":"WX",
 	"key":"displayname",
 	"method":"send_group_message",
@@ -12,10 +12,10 @@
 	"value":"安化实习小分队（｡ò ∀ ó｡）"
 },"mode":0,"active":"on"},
 
-"QQ:discuss_message:2922990378":{"target":{
+"QQ:discuss_message:懒得动":{"target":{
 	"plat":"WX",
 	"key":"displayname",
 	"method":"send_group_message",
-	"value":"温馨e家"
+	"value":"明年"
 },"mode":0,"active":"on"}
 }
