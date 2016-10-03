@@ -1,4 +1,4 @@
-package Mojo::Weixin::Plugin::PostQRcode;
+package Mojo::Webqq::Plugin::MYPostQRcode;
 our $PRIORITY = 0;
 our $CALL_ON_LOAD = 1;
 use MIME::Base64;
@@ -68,14 +68,14 @@ sub call{
             $client->stop();
             return 
         }
-        $data->{subject} = "微信扫描二维码" if not defined $data->{subject};
         
-         #需要产生随机的云存储路径，防止好像干扰
-        my $uniq_path = "mojo_weixin_" .  substr(Time::HiRes::gettimeofday(),4) .  sprintf("%.6f",rand(1)) . ".png";
+        
+        $data->{subject} = "QQ帐号" . (defined $client->qq?$client->qq:'') . "扫描二维码" if not defined $data->{subject};
+        #需要产生随机的云存储路径，防止好像干扰
+        my $uniq_path = "mojo_webqq_" .  substr(Time::HiRes::gettimeofday(),4) .  sprintf("%.6f",rand(1)) . ".png";
         my $url = upload($client,undef,$uniq_path,$qrcode_data);
         return if not defined $url;
         $client->info("二维码已上传云存储[ $url ]");
-        
         
         my $mime = MIME::Lite->new(
             Type    => 'multipart/mixed',
@@ -85,7 +85,7 @@ sub call{
         $mime->add("Subject"=>"=?UTF-8?B?" . MIME::Base64::encode_base64($data->{subject},"") . "?=");
         $mime->attach(
             Type     =>"text/plain; charset=UTF-8",
-            Data     =>"<br/>\n<img src='$url' /><br/>\n请使用手机微信扫描附件中的二维码 \n <a href='$url'> ".$url." </a> ",
+            Data     =>"<br/>\n<img src='$url' /><br/>\n请使用手机QQ扫描附件中的二维码 \n <a href='$url'> ".$url." </a> ",
         );
         $mime->attach(
             Path        => $filename,

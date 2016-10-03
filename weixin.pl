@@ -22,7 +22,7 @@ $client->load("Riddle");
 $client->load("Weather");
 $client->load("FuckDaShen");
 $client->load("AutoVerify");
-$client->load("XiaoiceReply",data=>{
+$client->load("MYXiaoiceReply",data=>{
     is_need_at  => 0,           #可选，是否需要艾特我来触发智能回复
     comamnd_on  => "小冰启动",  #可选，启动智能回复的命令，在手机端发送给任何人/群该消息内容即可
     comamnd_off => "小冰停止",  #可选，停止智能回复的命令，在手机端发送给任何人/群该消息内容即可
@@ -31,7 +31,7 @@ $client->load("XiaoiceReply",data=>{
 ##	12669fb3f28c44d0b1078d5194b71d39
 #	 	apikey          => '12669fb3f28c44d0b1078d5194b71d39', #可选，参考http://www.tuling123.com/html/doc/apikey.html
 #});
-$client->load("PostQRcode",data=>{
+$client->load("MYPostQRcode",data=>{
     smtp    =>  'smtp.163.com', #邮箱的smtp地址  
     port    =>  '25', #smtp服务器端口，默认25
     from    =>  '18711180761@163.com', #发件人

@@ -50,7 +50,7 @@ $client->load("Openqq",data=>{listen=>[{host=>$host,port=>$port}], post_api=>$po
 #    post_port => $port            , #提交验证码的链接地址中使用的端口，默认1987
 #});
 
-$client->load("PostQRcode",data=>{
+$client->load("MYPostQRcode",data=>{
     smtp    =>  'smtp.163.com', #邮箱的smtp地址  
     port    =>  '25', #smtp服务器端口，默认25
     from    =>  '18711180761@163.com', #发件人

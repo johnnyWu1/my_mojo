@@ -1,3 +1,3 @@
-# perl qq.pl &
-# perl weixin.pl &
-perl ./qq.pl
+perl ./qq.pl &
+perl ./weixin.pl &
+# perl ./qq.pl

@@ -1,4 +1,4 @@
-package Mojo::Weixin::Plugin::XiaoiceReply;
+package Mojo::Weixin::Plugin::MYXiaoiceReply;
 our $PRIORITY = 1;
 sub call{
     my $client = shift;
