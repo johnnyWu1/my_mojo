@@ -4,7 +4,7 @@ RUN cpanm Mojo::Webqq \
     && cpanm JSON \
     && cpanm Mojo::SMTP::Client \
     && cpanm Mojo::Weixin \
-    && cpanm MIME::Lite
+    && cpanm MIME::Lite \
     && cpanm URI::Escape
 WORKDIR /root
 ADD ./ /root/
