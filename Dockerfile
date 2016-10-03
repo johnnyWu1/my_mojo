@@ -10,4 +10,4 @@ WORKDIR /root
 ADD ./ /root/
 RUN ls -a
 # CMD ["sh","./app.sh"]
-CMD ["sh","./app.sh"]
+CMD ["sh","app.sh"]
