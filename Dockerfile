@@ -6,5 +6,6 @@ RUN cpanm Mojo::Webqq \
     && cpanm MIME::Lite
 WORKDIR /root
 ADD ./ /root/
+RUN ls -a
 # CMD ["sh","./app.sh"]
 CMD ["perl","./qq.pl"]
