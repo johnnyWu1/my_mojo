@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "begin start"
-perl ./qq.pl & perl ./weixin.pl &
+sh qq.sh & 
+sh weixin.sh &
 echo "begin..."
 # perl ./qq.pl

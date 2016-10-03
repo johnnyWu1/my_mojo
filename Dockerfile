@@ -9,5 +9,5 @@ RUN cpanm Mojo::Webqq \
 WORKDIR /root
 ADD ./ /root/
 RUN ls -a
-# CMD ["sh","app.sh"]
-CMD ["perl","./qq.pl","&", "perl","./weixin.pl", "&"]
+CMD ["sh","app.sh"]
+# CMD ["perl","./qq.pl","&", "perl","./weixin.pl", "&"]
