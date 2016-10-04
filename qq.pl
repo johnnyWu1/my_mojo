@@ -24,9 +24,6 @@ $client->load("ShowMsg");
 $client->load("SmartReply",data=>{
 #	12669fb3f28c44d0b1078d5194b71d39
 	 	apikey          => '12669fb3f28c44d0b1078d5194b71d39', #可选，参考http://www.tuling123.com/html/doc/apikey.html
-        allow_group     => ["41995224"],  #可选，允许插件的群，可以是群名称或群号码
-        ban_group       => ["私人群",123456], #可选，禁用该插件的群，可以是群名称或群号码
-        notice_reply    => ["对不起，请不要这么频繁的艾特我","对不起，您的艾特次数太多"], #可选，提醒时用语
         is_need_at      => 1,  #默认是1 是否需要艾特才触发回复
 #        keyword         => [qw(jonney jonney助手)], #触发智能回复的关键字，使用时请设置is_need_at=>0
 });

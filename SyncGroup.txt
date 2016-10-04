@@ -17,5 +17,42 @@
 	"key":"displayname",
 	"method":"send_group_message",
 	"value":"明年"
+},"mode":0,"active":"on"},
+
+"QQ:discuss_message:温馨の家":{"target":{
+	"plat":"WX",
+	"key":"displayname",
+	"method":"send_group_message",
+	"value":"温馨e家"
+},"mode":0,"active":"on"},
+
+"QQ:group_message:221243040":{"target":{
+	"plat":"WX",
+	"key":"displayname",
+	"method":"send_group_message",
+	"value":"温馨e家"
+},"mode":0,"active":"on"},
+
+"QQ:group_message:361166070":{"target":{
+	"plat":"WX",
+	"key":"displayname",
+	"method":"send_group_message",
+	"value":"温馨e家"
+},"mode":0,"active":"on"},
+
+"QQ:group_message:314990017":{"target":{
+	"plat":"WX",
+	"key":"displayname",
+	"method":"send_group_message",
+	"value":"温馨e家"
+},"mode":0,"active":"on"},
+
+"QQ:group_message:102175123":{"target":{
+	"plat":"WX",
+	"key":"displayname",
+	"method":"send_group_message",
+	"value":"13级教育学院群体学生群"
 },"mode":0,"active":"on"}
+
+
 }
